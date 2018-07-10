@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>form</title>
+  </head>
+  <style>
+  body {background-color: grey;}
+  h2 {text-decoration-color: green;text-align: center;}
+  div {height: 800px;
+  width: 50%;
+  background-image: url("1.jpeg");
+
+
+
+margin-left: 300px;
+margin-top: 20px;
+padding: 10px;
+box-shadow: 100px;
+}
+  </style>
+  <body>
+    <h2>PROFILE</h2>
+    <div>
+    <form>
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname">
+
+
+<p>Note that the form itself is not visible.</p>
+
+<p>Also note that the default width of a text input field is 20 characters.</p>
+<h3>gender</h3>
+
+
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other</br>
+  <h3>address</h3><textarea name="message" rows="10" cols="30"></textarea></br>
+  User name:<br>
+  <input type="text" name="userid">
+<br>
+User password:<br>
+<input type="password" name="psw">
+</br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+  </body>
+</html>
