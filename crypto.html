@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="crypto.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <style>
+
+  body {background-image: url("k.jpg");}
+    .bi {
+      background-color: #e2772b;
+      padding: 50px;
+      margin-bottom: 30px;}
+      .input{
+        padding-right: 20px;
+        padding-left: 200px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-left: 400px;
+        margin-right: 400px;
+      background-color: #e2772b;}
+      body {background-image:url("bi.png");}
+
+    </style>
+  </head>
+  <body>
+    <script>
+    var a;
+    var b;
+    var c;
+    $(document).ready(function(){
+
+
+            $.ajax( {url : "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=INR",
+              method : "get" ,
+            //  data : mydata,
+              success : function(result) {
+                console.log(result)
+                a = result.INR;
+
+
+
+              },
+              error: function() {
+                console.log("error")
+              }
+
+
+
+        });
+
+    });
+    function bitvalue() {
+       b = $("#bitcoin").val()
+
+
+      $("#inr").val(a * b)
+    }
+    function inrvalue() {
+      c = $("#inr").val()
+      $("#bitcoin").val(c/a)
+    }
+    </script>
+    <div class="bi">
+    <h1>BITCOIN<i class="fa fa-bitcoin" style="font-size:36px"></i></h1></div>
+    <div class= "input">
+      <b>BTC:</b>
+    <input type="text" onkeyup="bitvalue()" id="bitcoin" value="" > <br>
+    <h1> = </h2>
+<b>INR:</b>
+    <input type="text" onkeyup="inrvalue()" id="inr" value=""> </div>
+
+
+
+  </body>
+</html>
